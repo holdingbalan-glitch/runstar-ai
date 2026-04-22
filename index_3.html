@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RunStar AI — Seu treinador de corrida com IA</title>
+  <meta name="description" content="O primeiro app de corrida de rua com inteligência artificial que adapta seu treino toda semana. Entre na lista de espera." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent: #D6FF00;
+      --bg: #000000;
+      --s1: #0a0a0a;
+      --s2: #111111;
+      --bd: #2a2a2a;
+      --tx: #ffffff;
+      --muted: #aaaaaa;
+      --dim: #555555;
+      --glow: rgba(214,255,0,0.18);
+      --glow-sm: rgba(214,255,0,0.08);
+    }
+
+    html { scroll-behavior: smooth; background: #000; }
+
+    body {
+      background: #000000;
+      color: #ffffff;
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+
+
+    /* ── PAGES ── */
+    .page { display: none; min-height: 100vh; position: relative; z-index: 1; background: #000000; }
+    .page.active { display: flex; flex-direction: column; }
+
+    /* ── NAV ── */
+    nav {
+      padding: 20px 40px;
+      display: flex; align-items: center; justify-content: center;
+      border-bottom: 1px solid #2a2a2a;
+      background: #000000;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 10;
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: 17px; color: var(--accent); letter-spacing: -0.5px;
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 34px; height: 34px; border-radius: 10px;
+      background: var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      flex: 1;
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center;
+      padding: 80px 24px 100px;
+      text-align: center;
+      position: relative;
+    }
+
+
+
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 14px; border-radius: 100px;
+      border: 1px solid rgba(214,255,0,0.25);
+      background: rgba(214,255,0,0.05);
+      font-size: 12px; font-weight: 500; color: var(--accent);
+      margin-bottom: 28px;
+      animation: fadeUp 0.6s ease both;
+    }
+    .badge-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s ease infinite;
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(36px, 7vw, 68px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -2.5px;
+      max-width: 760px;
+      margin-bottom: 22px;
+      color: #ffffff;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+    h1 em { color: var(--accent); font-style: normal; }
+
+    .sub {
+      font-size: clamp(15px, 2vw, 18px);
+      color: var(--muted);
+      max-width: 480px;
+      line-height: 1.65;
+      font-weight: 300;
+      margin-bottom: 44px;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    /* ── FORM ── */
+    .form-wrap {
+      display: flex; flex-direction: column; gap: 10px;
+      align-items: center; max-width: 380px; width: 100%;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+    .email-input {
+      width: 100%;
+      padding: 15px 20px;
+      background: var(--s2);
+      border: 1.5px solid var(--bd);
+      border-radius: 14px;
+      color: var(--tx);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      outline: none;
+      text-align: center;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .email-input::placeholder { color: var(--dim); }
+    .email-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(214,255,0,0.08);
+    }
+    .btn-primary {
+      width: 100%;
+      padding: 15px 28px;
+      background: var(--accent);
+      color: #000;
+      border: none; border-radius: 14px;
+      font-family: 'Syne', sans-serif;
+      font-size: 14px; font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.2s, opacity 0.2s;
+      box-shadow: 0 0 30px rgba(214,255,0,0.25);
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 40px rgba(214,255,0,0.35);
+    }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .form-note {
+      margin-top: 14px;
+      font-size: 11px; color: var(--dim);
+      animation: fadeUp 0.6s 0.4s ease both;
+    }
+
+    /* ── FEATURES ── */
+    .features {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--bd);
+      border-top: 1px solid var(--bd);
+      border-bottom: 1px solid var(--bd);
+    }
+    @media (max-width: 640px) { .features { grid-template-columns: 1fr; } }
+
+    .feat {
+      padding: 36px 32px;
+      background: var(--s1);
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .feat:hover { background: var(--s2); }
+    .feat-icon {
+      font-size: 26px; margin-bottom: 14px;
+      display: block; text-align: center;
+    }
+    .feat h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 16px; font-weight: 700;
+      margin-bottom: 8px; color: var(--tx);
+    }
+    .feat p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* ── SOCIAL PROOF ── */
+    .social {
+      text-align: center;
+      padding: 60px 24px;
+    }
+    .social p { font-size: 13px; color: var(--dim); margin-bottom: 20px; }
+    .avatars {
+      display: flex; justify-content: center; align-items: center; gap: -8px;
+      margin-bottom: 12px;
+    }
+    .avatar {
+      width: 38px; height: 38px; border-radius: 50%;
+      border: 2px solid var(--bg);
+      background: var(--s2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+      margin-left: -8px;
+    }
+    .avatar:first-child { margin-left: 0; }
+    .social-text {
+      font-size: 13px; color: var(--muted);
+    }
+    .social-text strong { color: var(--accent); }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 28px 40px;
+      border-top: 1px solid var(--bd);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+    }
+    footer p { font-size: 11px; color: var(--dim); }
+
+    /* ══════════════════════════════════════
+       THANK YOU PAGE
+    ══════════════════════════════════════ */
+    #page-thanks {
+      background: var(--bg);
+    }
+
+    .thanks-hero {
+      flex: 1;
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center;
+      padding: 60px 24px 80px;
+      text-align: center;
+    }
+
+
+
+    .unlock-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 20px; border-radius: 100px;
+      border: 1.5px solid rgba(214,255,0,0.4);
+      background: rgba(214,255,0,0.06);
+      font-size: 13px; font-weight: 600; color: var(--accent);
+      margin-bottom: 32px;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .thanks-hero h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(30px, 6vw, 54px);
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.08;
+      max-width: 620px;
+      margin-bottom: 18px;
+      animation: fadeUp 0.5s 0.1s ease both;
+    }
+    .thanks-hero h2 em { color: var(--accent); font-style: normal; }
+
+    .thanks-sub {
+      font-size: 16px; color: var(--muted);
+      max-width: 440px; line-height: 1.65;
+      margin-bottom: 40px;
+      animation: fadeUp 0.5s 0.15s ease both;
+    }
+
+    /* ── COUNTDOWN ── */
+    .countdown-wrap {
+      background: var(--s1);
+      border: 1px solid var(--bd);
+      border-radius: 20px;
+      padding: 28px 36px;
+      margin-bottom: 36px;
+      animation: fadeUp 0.5s 0.2s ease both;
+      position: relative;
+      overflow: hidden;
+    }
+    .countdown-wrap::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(214,255,0,0.03) 0%, transparent 60%);
+    }
+    .countdown-label {
+      font-size: 11px; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+    .countdown-digits {
+      display: flex; align-items: center; gap: 6px;
+      justify-content: center;
+    }
+    .digit-block {
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+    }
+    .digit-num {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(36px, 8vw, 56px);
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      min-width: 70px; text-align: center;
+    }
+    .digit-label {
+      font-size: 10px; color: var(--dim);
+      text-transform: uppercase; letter-spacing: 1.5px;
+    }
+    .colon {
+      font-family: 'Syne', sans-serif;
+      font-size: 40px; font-weight: 800;
+      color: var(--dim); margin-bottom: 18px;
+      animation: blink 1s step-end infinite;
+    }
+
+    /* ── CTA BUTTON LARGE ── */
+    .btn-cta-big {
+      display: inline-block;
+      padding: 18px 40px;
+      background: var(--accent);
+      color: #000;
+      border: none; border-radius: 16px;
+      font-family: 'Syne', sans-serif;
+      font-size: 16px; font-weight: 800;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 0 50px rgba(214,255,0,0.3);
+      transition: transform 0.15s, box-shadow 0.2s;
+      animation: fadeUp 0.5s 0.25s ease both;
+    }
+    .btn-cta-big:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 70px rgba(214,255,0,0.4);
+    }
+    .btn-cta-big:active { transform: translateY(0); }
+
+    .btn-cta-big span {
+      display: block; font-size: 11px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400; color: rgba(0,0,0,0.6);
+      margin-top: 3px;
+    }
+
+    .cta-note {
+      margin-top: 16px;
+      font-size: 12px; color: var(--dim);
+      animation: fadeUp 0.5s 0.3s ease both;
+    }
+
+    /* ── BENEFITS ── */
+    .benefits {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      justify-content: center;
+      max-width: 560px;
+      margin: 40px auto 0;
+      animation: fadeUp 0.5s 0.35s ease both;
+    }
+    .benefit-pill {
+      padding: 8px 16px;
+      background: var(--s2);
+      border: 1px solid var(--bd);
+      border-radius: 100px;
+      font-size: 12px; color: var(--muted);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .benefit-pill::before { content: '✓'; color: var(--accent); font-weight: 700; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; } 50% { opacity: 0.4; }
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; } 50% { opacity: 0; }
+    }
+
+    /* ── EXPIRED STATE ── */
+    .expired-msg {
+      display: none;
+      font-family: 'Syne', sans-serif;
+      font-size: 18px; font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 480px) {
+      nav { padding: 16px 20px; }
+      .form-wrap { flex-direction: column; }
+      .email-input, .btn-primary { width: 100%; }
+      footer { flex-direction: column; text-align: center; }
+      .countdown-digits { gap: 4px; }
+      .digit-num { min-width: 54px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════
+     PÁGINA 1 — LANDING
+══════════════════════ -->
+<div id="page-landing" class="page active">
+  <nav>
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg width="18" height="18" viewBox="0 0 100 100" fill="none">
+          <path d="M50 8 L61 38 L93 38 L67 58 L76 90 L50 70 L24 90 L33 58 L7 38 L39 38 Z"
+            stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </div>
+      RunStar AI
+    </a>
+  </nav>
+
+  <section class="hero">
+    <div class="badge">
+      <div class="badge-dot"></div>
+      Pré-lançamento exclusivo
+    </div>
+
+    <h1>Treino de corrida que <em>evolui com você</em></h1>
+
+    <p class="sub">
+      O RunStar AI cria sua planilha personalizada, acompanha sua evolução e adapta seu treino toda semana — como um treinador particular, na palma da mão.
+    </p>
+
+    <div class="form-wrap">
+      <input
+        type="email"
+        id="email-input"
+        class="email-input"
+        placeholder="Seu melhor e-mail"
+        autocomplete="email"
+      />
+      <button class="btn-primary" onclick="handleSubmit()">
+        Quero minha vaga →
+      </button>
+    </div>
+
+    <p class="form-note">Sem spam. Só novidades do RunStar AI.</p>
+  </section>
+
+  <section class="features">
+    <div class="feat">
+      <span class="feat-icon">🧠</span>
+      <h3>IA que aprende com você</h3>
+      <p>Quanto mais você treina, mais o app entende seu ritmo, seus limites e o que funciona pra você.</p>
+    </div>
+    <div class="feat">
+      <span class="feat-icon">📈</span>
+      <h3>Planilha que se adapta</h3>
+      <p>Cansou? Viajou? O treino se ajusta automaticamente pra semana seguinte. Sem culpa, sem perda de foco.</p>
+    </div>
+    <div class="feat">
+      <span class="feat-icon">🏅</span>
+      <h3>Metas reais</h3>
+      <p>De 0 a 5km, ou de 5km pra sub-30 — o app traça o caminho mais curto até a sua meta.</p>
+    </div>
+  </section>
+
+  <section class="social">
+    <div class="avatars">
+      <div class="avatar">🏃</div>
+      <div class="avatar">⚡</div>
+      <div class="avatar">🌟</div>
+      <div class="avatar">🔥</div>
+      <div class="avatar">💪</div>
+    </div>
+    <p class="social-text">
+      <strong>+120 corredores</strong> já entraram na lista de espera essa semana
+    </p>
+  </section>
+
+  <footer>
+    <a href="#" class="logo" style="font-size:13px;">
+      <div class="logo-icon" style="width:26px;height:26px;border-radius:8px;">
+        <svg width="13" height="13" viewBox="0 0 100 100" fill="none">
+          <path d="M50 8 L61 38 L93 38 L67 58 L76 90 L50 70 L24 90 L33 58 L7 38 L39 38 Z"
+            stroke="#000" stroke-width="8" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      RunStar AI
+    </a>
+    <p>© 2026 RunStar AI — Todos os direitos reservados.</p>
+  </footer>
+</div>
+
+
+<!-- ══════════════════════════
+     PÁGINA 2 — THANK YOU
+══════════════════════════ -->
+<div id="page-thanks" class="page">
+  <nav>
+    <a href="#" class="logo" onclick="goBack(event)">
+      <div class="logo-icon">
+        <svg width="18" height="18" viewBox="0 0 100 100" fill="none">
+          <path d="M50 8 L61 38 L93 38 L67 58 L76 90 L50 70 L24 90 L33 58 L7 38 L39 38 Z"
+            stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </div>
+      RunStar AI
+    </a>
+  </nav>
+
+  <section class="thanks-hero" style="position:relative;">
+    <div class="unlock-badge">
+      🔓 Vaga desbloqueada para você
+    </div>
+
+    <h2>Você ganhou acesso <em>antecipado</em></h2>
+
+    <p class="thanks-sub">
+      Uma vaga de fundador foi reservada no seu nome. Mas ela só fica disponível pelos próximos 15 minutos — depois some.
+    </p>
+
+    <div class="countdown-wrap">
+      <p class="countdown-label">Sua vaga expira em</p>
+      <div class="countdown-digits">
+        <div class="digit-block">
+          <div class="digit-num" id="cd-min">14</div>
+          <div class="digit-label">min</div>
+        </div>
+        <div class="colon">:</div>
+        <div class="digit-block">
+          <div class="digit-num" id="cd-sec">59</div>
+          <div class="digit-label">seg</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="expired-msg" id="expired-msg">⏰ Sua vaga expirou. Mas você ainda pode entrar!</p>
+
+    <a
+      href="https://checkout.ticto.app/OE3A20CD4"
+      id="cta-btn"
+      class="btn-cta-big"
+      target="_blank"
+    >
+      Garantir minha vaga de Fundador
+      <span>Preço especial só por tempo limitado</span>
+    </a>
+
+    <p class="cta-note">🔒 Pagamento seguro · Satisfação garantida</p>
+
+    <div class="benefits">
+      <div class="benefit-pill">Acesso vitalício ao preço fundador</div>
+      <div class="benefit-pill">Plano personalizado por IA</div>
+      <div class="benefit-pill">Grupo VIP de fundadores</div>
+      <div class="benefit-pill">Influência no desenvolvimento do app</div>
+      <div class="benefit-pill">Suporte prioritário</div>
+    </div>
+  </section>
+
+  <footer>
+    <a href="#" class="logo" style="font-size:13px;" onclick="goBack(event)">
+      <div class="logo-icon" style="width:26px;height:26px;border-radius:8px;">
+        <svg width="13" height="13" viewBox="0 0 100 100" fill="none">
+          <path d="M50 8 L61 38 L93 38 L67 58 L76 90 L50 70 L24 90 L33 58 L7 38 L39 38 Z"
+            stroke="#000" stroke-width="8" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      RunStar AI
+    </a>
+    <p>© 2026 RunStar AI — Todos os direitos reservados.</p>
+  </footer>
+</div>
+
+
+<script>
+  // ── SUBMIT ──
+  function handleSubmit() {
+    const input = document.getElementById('email-input');
+    const btn = document.querySelector('.btn-primary');
+    const email = input.value.trim();
+
+    if (!email || !email.includes('@')) {
+      input.style.borderColor = '#ff4444';
+      input.focus();
+      setTimeout(() => input.style.borderColor = '', 1500);
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+    showThanks();
+  }
+
+  // ── NAVEGAÇÃO ──
+  function showThanks() {
+    document.getElementById('page-landing').classList.remove('active');
+    const thanks = document.getElementById('page-thanks');
+    thanks.classList.add('active');
+    window.scrollTo(0, 0);
+    startCountdown();
+  }
+
+  function goBack(e) {
+    e.preventDefault();
+    document.getElementById('page-thanks').classList.remove('active');
+    document.getElementById('page-landing').classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  // ── COUNTDOWN ──
+  let timerInterval = null;
+
+  function startCountdown() {
+    if (timerInterval) clearInterval(timerInterval);
+    let totalSeconds = 15 * 60; // 15 minutos
+
+    function update() {
+      const m = Math.floor(totalSeconds / 60);
+      const s = totalSeconds % 60;
+      document.getElementById('cd-min').textContent = String(m).padStart(2, '0');
+      document.getElementById('cd-sec').textContent = String(s).padStart(2, '0');
+
+      if (totalSeconds <= 0) {
+        clearInterval(timerInterval);
+        document.getElementById('expired-msg').style.display = 'block';
+        document.querySelector('.countdown-wrap').style.opacity = '0.4';
+        return;
+      }
+      totalSeconds--;
+    }
+
+    update();
+    timerInterval = setInterval(update, 1000);
+  }
+
+  // ── ENTER KEY ──
+  document.getElementById('email-input').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') handleSubmit();
+  });
+</script>
+
+</body>
+</html>
