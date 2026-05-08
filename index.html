@@ -393,7 +393,333 @@
       .countdown-digits { gap: 4px; }
       .digit-num { min-width: 54px; }
     }
-  </style>
+  
+    /* ══════════════════════════════════════
+       VSL SECTION
+    ══════════════════════════════════════ */
+    .vsl-section {
+      background: #000;
+      padding: 0;
+    }
+
+    .vsl-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      padding: 80px 80px;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    .vsl-reverse { direction: rtl; }
+    .vsl-reverse > * { direction: ltr; }
+
+    @media (max-width: 768px) {
+      .vsl-block { grid-template-columns: 1fr; padding: 50px 24px; gap: 40px; }
+      .vsl-reverse { direction: ltr; }
+    }
+
+    .vsl-tag {
+      display: inline-block;
+      padding: 5px 14px;
+      border-radius: 100px;
+      border: 1px solid #333;
+      font-size: 11px;
+      font-weight: 600;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+    .vsl-tag-accent { border-color: rgba(214,255,0,0.3); color: #D6FF00; }
+
+    .vsl-text h2 {
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .vsl-text p {
+      font-size: 16px;
+      color: #aaa;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .vsl-highlight {
+      font-size: 20px !important;
+      font-weight: 700 !important;
+      color: #D6FF00 !important;
+    }
+
+    .vsl-list {
+      list-style: none;
+      padding: 0; margin: 20px 0 0;
+    }
+    .vsl-list li {
+      font-size: 15px;
+      color: #ccc;
+      padding: 8px 0;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    .vsl-list li:last-child { border: none; }
+
+    /* Cards visuais */
+    .vsl-card-dark {
+      background: #0a0a0a;
+      border: 1px solid #222;
+      border-radius: 20px;
+      padding: 28px;
+      position: relative;
+    }
+
+    .vsl-sheet { width: 100%; }
+    .vsl-sheet-row {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      padding: 10px 0;
+      border-bottom: 1px solid #1a1a1a;
+      font-size: 13px;
+      color: #444;
+    }
+    .vsl-sheet-row.header { color: #333; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+
+    .vsl-x {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 120px;
+      font-weight: 900;
+      color: #ff3333;
+      opacity: 0.15;
+      pointer-events: none;
+    }
+
+    .vsl-card-label {
+      text-align: center;
+      font-size: 12px;
+      color: #444;
+      margin-top: 16px;
+      margin-bottom: 0;
+    }
+
+    /* App preview */
+    .vsl-app-preview { }
+    .vsl-app-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .vsl-app-logo { font-size: 14px; font-weight: 700; color: #D6FF00; }
+    .vsl-app-day { font-size: 12px; color: #444; }
+
+    .vsl-app-treino {
+      background: #111;
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .vsl-app-label { font-size: 11px; color: #555; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+    .vsl-app-main { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .vsl-app-pace { font-size: 14px; color: #888; }
+    .vsl-app-pace strong { color: #D6FF00; }
+
+    .vsl-app-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .vsl-stat {
+      background: #111;
+      border-radius: 10px;
+      padding: 12px 8px;
+      text-align: center;
+    }
+    .vsl-stat-num { display: block; font-size: 18px; font-weight: 800; color: #D6FF00; }
+    .vsl-stat-label { display: block; font-size: 10px; color: #555; margin-top: 3px; }
+
+    /* Divisor */
+    .vsl-divider {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 40px 80px;
+      font-size: 12px;
+      color: #333;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    .vsl-divider-line { flex: 1; height: 1px; background: #1a1a1a; }
+
+    @media (max-width: 768px) { .vsl-divider { padding: 30px 24px; } }
+
+    /* Ciência */
+    .vsl-ciencia {
+      padding: 80px 80px;
+      text-align: center;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    @media (max-width: 768px) { .vsl-ciencia { padding: 50px 24px; } }
+
+    .vsl-ciencia h2 {
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .vsl-ciencia h2 em { color: #D6FF00; font-style: normal; }
+    .vsl-ciencia-sub { font-size: 17px; color: #666; margin-bottom: 50px; }
+
+    .vsl-pilares {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 768px) { .vsl-pilares { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .vsl-pilares { grid-template-columns: 1fr; } }
+
+    .vsl-pilar {
+      background: #0a0a0a;
+      border: 1px solid #1a1a1a;
+      border-radius: 16px;
+      padding: 28px 20px;
+      text-align: center;
+      transition: border-color 0.2s;
+    }
+    .vsl-pilar:hover { border-color: rgba(214,255,0,0.2); }
+    .vsl-pilar-icon { font-size: 32px; margin-bottom: 14px; }
+    .vsl-pilar h3 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+    .vsl-pilar p { font-size: 13px; color: #666; line-height: 1.6; }
+
+    /* CTA Final */
+    .vsl-cta-final {
+      padding: 100px 80px;
+      text-align: center;
+      background: #000;
+    }
+    @media (max-width: 768px) { .vsl-cta-final { padding: 60px 24px; } }
+
+    .vsl-cta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      border-radius: 100px;
+      border: 1.5px solid rgba(214,255,0,0.3);
+      background: rgba(214,255,0,0.05);
+      font-size: 13px;
+      font-weight: 600;
+      color: #D6FF00;
+      margin-bottom: 30px;
+    }
+
+    .vsl-cta-final h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .vsl-cta-final h2 em { color: #D6FF00; font-style: normal; }
+    .vsl-cta-final p { font-size: 17px; color: #666; margin-bottom: 36px; }
+
+    
+    /* ══════════════════════════════════════
+       PÁGINA DE VENDAS
+    ══════════════════════════════════════ */
+    .vendas-hero {
+      padding: 60px 24px 40px;
+      text-align: center;
+    }
+    .vendas-hero h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .vendas-hero h2 em { color: #D6FF00; font-style: normal; }
+
+    .vendas-funcionalidades {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 20px 24px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .vendas-func {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 24px 0;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    .vendas-func:last-child { border: none; }
+    .vendas-func-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+    .vendas-func h3 { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .vendas-func p { font-size: 14px; color: #888; line-height: 1.65; }
+
+    .vendas-plano {
+      padding: 20px 24px 80px;
+      display: flex;
+      justify-content: center;
+    }
+    .vendas-plano-box {
+      max-width: 480px;
+      width: 100%;
+      background: #0a0a0a;
+      border: 1.5px solid rgba(214,255,0,0.25);
+      border-radius: 24px;
+      padding: 40px 36px;
+    }
+    .vendas-plano-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 100px;
+      background: rgba(214,255,0,0.08);
+      border: 1px solid rgba(214,255,0,0.2);
+      font-size: 12px;
+      font-weight: 600;
+      color: #D6FF00;
+      margin-bottom: 20px;
+    }
+    .vendas-plano-box h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 24px;
+      line-height: 1.3;
+    }
+    .vendas-preco { margin-bottom: 28px; }
+    .vendas-preco-de { font-size: 14px; color: #444; text-decoration: line-through; margin-bottom: 4px; }
+    .vendas-preco-por { font-size: 48px; font-weight: 900; color: #D6FF00; line-height: 1; }
+    .vendas-preco-por span { font-size: 18px; font-weight: 400; color: #666; }
+    .vendas-preco-mes { font-size: 13px; color: #555; margin-top: 4px; }
+
+    .vendas-inclui {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+    }
+    .vendas-inclui li {
+      font-size: 15px;
+      color: #ccc;
+      padding: 10px 0;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    .vendas-inclui li:last-child { border: none; }
+
+    </style>
 </head>
 <body>
 
@@ -428,13 +754,13 @@
     <div class="form-wrap">
       <input
         type="email"
-        id="email-input"
+        id="whats-input"
         class="email-input"
-        placeholder="Seu melhor e-mail"
-        autocomplete="email"
+        placeholder="Seu WhatsApp (DDD + número)"
+        autocomplete="tel"
       />
       <button class="btn-primary" onclick="handleSubmit()">
-        Quero minha vaga →
+        Quero testar grátis! →
       </button>
     </div>
 
@@ -457,6 +783,122 @@
       <h3>Metas reais</h3>
       <p>De 0 a 5km, ou de 5km pra sub-30 — o app traça o caminho mais curto até a sua meta.</p>
     </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       SEÇÃO VSL — TEXTO + IMAGENS
+  ══════════════════════════════════════ -->
+  <section class="vsl-section">
+
+    <!-- BLOCO 1 — PROBLEMA -->
+    <div class="vsl-block vsl-problem">
+      <div class="vsl-text">
+        <span class="vsl-tag">O problema</span>
+        <h2>Você não desistiu de correr.<br/>A planilha desistiu de você.</h2>
+        <p>Planilhas genéricas da internet não sabem que você trabalhou até tarde. Não sabem que você viajou. Não sabem que sua perna travou na quinta. Elas mandam você correr do mesmo jeito toda semana — e quando você não consegue, a culpa parece ser sua.</p>
+        <p class="vsl-highlight">Mas não é.</p>
+      </div>
+      <div class="vsl-visual">
+        <div class="vsl-card-dark">
+          <div class="vsl-sheet">
+            <div class="vsl-sheet-row header">
+              <span>Dia</span><span>Treino</span><span>Pace</span>
+            </div>
+            <div class="vsl-sheet-row"><span>Seg</span><span>5km leve</span><span>6:00/km</span></div>
+            <div class="vsl-sheet-row"><span>Qua</span><span>5km leve</span><span>6:00/km</span></div>
+            <div class="vsl-sheet-row"><span>Sex</span><span>5km leve</span><span>6:00/km</span></div>
+            <div class="vsl-sheet-row"><span>Dom</span><span>5km leve</span><span>6:00/km</span></div>
+          </div>
+          <div class="vsl-x">✕</div>
+          <p class="vsl-card-label">Igual toda semana. Para todo mundo.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIVISOR -->
+    <div class="vsl-divider">
+      <div class="vsl-divider-line"></div>
+      <span>a solução</span>
+      <div class="vsl-divider-line"></div>
+    </div>
+
+    <!-- BLOCO 2 — SOLUÇÃO -->
+    <div class="vsl-block vsl-solution vsl-reverse">
+      <div class="vsl-text">
+        <span class="vsl-tag vsl-tag-accent">A solução</span>
+        <h2>Um treinador que aprende com você. Toda semana.</h2>
+        <p>O RunStar AI analisa seu histórico, sua rotina e sua evolução para criar um plano que é 100% seu. Quando você viaja, ele adapta. Quando você evolui, ele avança. Quando você precisa de descanso, ele sabe.</p>
+        <ul class="vsl-list">
+          <li>✓ Plano gerado do zero pra você</li>
+          <li>✓ Adapta automaticamente toda semana</li>
+          <li>✓ Aprende com seus dados reais</li>
+          <li>✓ Disponível 24h na palma da mão</li>
+        </ul>
+      </div>
+      <div class="vsl-visual">
+        <div class="vsl-card-dark">
+          <div class="vsl-app-preview">
+            <div class="vsl-app-header">
+              <span class="vsl-app-logo">⭐ RunStar AI</span>
+              <span class="vsl-app-day">Hoje</span>
+            </div>
+            <div class="vsl-app-treino">
+              <p class="vsl-app-label">Treino do dia</p>
+              <p class="vsl-app-main">Intervalado 6x800m</p>
+              <p class="vsl-app-pace">Pace alvo: <strong>4:45/km</strong></p>
+            </div>
+            <div class="vsl-app-stats">
+              <div class="vsl-stat"><span class="vsl-stat-num">↑12%</span><span class="vsl-stat-label">vs semana passada</span></div>
+              <div class="vsl-stat"><span class="vsl-stat-num">87%</span><span class="vsl-stat-label">aderência</span></div>
+              <div class="vsl-stat"><span class="vsl-stat-num">4:52</span><span class="vsl-stat-label">pace médio</span></div>
+            </div>
+          </div>
+          <p class="vsl-card-label">Personalizado pra você. Atualizado toda semana.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOCO 3 — CIÊNCIA -->
+    <div class="vsl-ciencia">
+      <span class="vsl-tag">Por que funciona</span>
+      <h2>Cada treino baseado em <em>ciência real</em></h2>
+      <p class="vsl-ciencia-sub">Não é feeling. Não é achismo. É o que a ciência do esporte comprova.</p>
+      <div class="vsl-pilares">
+        <div class="vsl-pilar">
+          <div class="vsl-pilar-icon">🧬</div>
+          <h3>Sobrecarga Progressiva</h3>
+          <p>Cada semana o treino avança no ritmo certo — sem lesão, sem estagnação.</p>
+        </div>
+        <div class="vsl-pilar">
+          <div class="vsl-pilar-icon">⚡</div>
+          <h3>Treino Polarizado</h3>
+          <p>80% volume leve + 20% alta intensidade. Método usado por corredores de elite.</p>
+        </div>
+        <div class="vsl-pilar">
+          <div class="vsl-pilar-icon">🔄</div>
+          <h3>Periodização Inteligente</h3>
+          <p>Ciclos de carga e recuperação calculados com base no seu histórico real.</p>
+        </div>
+        <div class="vsl-pilar">
+          <div class="vsl-pilar-icon">🧠</div>
+          <h3>IA Adaptativa</h3>
+          <p>Quanto mais você treina, mais preciso fica. O algoritmo evolui com você.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOCO 4 — CTA FINAL -->
+    <div class="vsl-cta-final">
+      <div class="vsl-cta-badge">🔓 Vagas de Fundador abertas</div>
+      <h2>Não é app de planilha.<br/><em>É ciência personalizada pra você.</em></h2>
+      <p>Garanta agora sua vaga com o menor preço que o RunStar AI vai ter — para sempre.</p>
+      <a href="https://checkout.ticto.app/OE3A20CD4" class="btn-cta-big" target="_blank">
+        Garantir minha vaga de Fundador
+        <span>Preço especial · Vagas limitadas</span>
+      </a>
+    </div>
+
   </section>
 
   <section class="social">
@@ -570,11 +1012,12 @@
 <script>
   // ── SUBMIT ──
   function handleSubmit() {
-    const input = document.getElementById('email-input');
+    const input = document.getElementById('whats-input');
     const btn = document.querySelector('.btn-primary');
-    const email = input.value.trim();
+    const whatsapp = input.value.trim();
+    const email = whatsapp;
 
-    if (!email || !email.includes('@')) {
+    if (!email || email.length < 10) {
       input.style.borderColor = '#ff4444';
       input.focus();
       setTimeout(() => input.style.borderColor = '', 1500);
@@ -628,11 +1071,135 @@
     timerInterval = setInterval(update, 1000);
   }
 
+  function showVendas() {
+    document.getElementById('page-thanks').classList.remove('active');
+    const vendas = document.getElementById('page-vendas');
+    vendas.classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  function goHome(e) {
+    if (e) e.preventDefault();
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-landing').classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
   // ── ENTER KEY ──
-  document.getElementById('email-input').addEventListener('keydown', function(e) {
+  document.getElementById('whats-input').addEventListener('keydown', function(e) {
     if (e.key === 'Enter') handleSubmit();
   });
 </script>
+
+
+<!-- ══════════════════════════════════════
+     PÁGINA 3 — VENDAS
+══════════════════════════════════════ -->
+<div id="page-vendas" class="page">
+  <nav>
+    <a href="#" class="logo" onclick="goHome(event)">
+      <div class="logo-icon">
+        <svg width="18" height="18" viewBox="0 0 100 100" fill="none">
+          <path d="M50 8 L61 38 L93 38 L67 58 L76 90 L50 70 L24 90 L33 58 L7 38 L39 38 Z"
+            stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </div>
+      RunStar AI
+    </a>
+  </nav>
+
+  <div class="vendas-hero">
+    <div class="unlock-badge">⭐ Plano Fundador — Vagas Limitadas</div>
+    <h2>Tudo que o <em>RunStar AI</em> vai fazer por você</h2>
+    <p class="thanks-sub">Você já testou grátis. Agora conheça o plano completo — e garante seu acesso com o menor preço que existirá.</p>
+  </div>
+
+  <!-- FUNCIONALIDADES -->
+  <div class="vendas-funcionalidades">
+    <div class="vendas-func">
+      <div class="vendas-func-icon">📋</div>
+      <div>
+        <h3>Planilha semanal personalizada por IA</h3>
+        <p>Gerada toda semana com base no seu histórico, seu ritmo e seus objetivos. Nunca igual à semana anterior.</p>
+      </div>
+    </div>
+    <div class="vendas-func">
+      <div class="vendas-func-icon">🧠</div>
+      <div>
+        <h3>IA que aprende com você</h3>
+        <p>Quanto mais você treina, mais preciso fica. O algoritmo ajusta intensidade, volume e recuperação automaticamente.</p>
+      </div>
+    </div>
+    <div class="vendas-func">
+      <div class="vendas-func-icon">🔬</div>
+      <div>
+        <h3>Ciência aplicada ao seu treino</h3>
+        <p>Sobrecarga progressiva, periodização inteligente e treino polarizado — tudo baseado em evidências científicas.</p>
+      </div>
+    </div>
+    <div class="vendas-func">
+      <div class="vendas-func-icon">🏅</div>
+      <div>
+        <h3>Metas reais e alcançáveis</h3>
+        <p>Do primeiro 5km até o sub-30 — o app traça o caminho mais curto até sua meta e acompanha cada passo.</p>
+      </div>
+    </div>
+    <div class="vendas-func">
+      <div class="vendas-func-icon">📱</div>
+      <div>
+        <h3>App completo em breve</h3>
+        <p>Dashboard, histórico, gráficos de evolução, integração com Garmin e Strava. Fundadores têm acesso primeiro.</p>
+      </div>
+    </div>
+    <div class="vendas-func">
+      <div class="vendas-func-icon">👥</div>
+      <div>
+        <h3>Grupo VIP de fundadores</h3>
+        <p>Acesso a um grupo exclusivo onde você influencia diretamente o desenvolvimento do app e tem suporte prioritário.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLANO FUNDADOR -->
+  <div class="vendas-plano">
+    <div class="vendas-plano-box">
+      <div class="vendas-plano-badge">🔓 Plano Fundador</div>
+      <h2>Preço especial para quem acredita desde o início</h2>
+      <div class="vendas-preco">
+        <div class="vendas-preco-de">De R$478,80/ano</div>
+        <div class="vendas-preco-por">R$238,80<span>/ano</span></div>
+        <div class="vendas-preco-mes">equivale a R$19,90/mês</div>
+      </div>
+      <ul class="vendas-inclui">
+        <li>✓ Planilha semanal personalizada por IA</li>
+        <li>✓ Acesso antecipado ao app</li>
+        <li>✓ Grupo VIP de fundadores</li>
+        <li>✓ Preço bloqueado para sempre</li>
+        <li>✓ Influência no desenvolvimento do app</li>
+        <li>✓ Suporte prioritário</li>
+      </ul>
+      <a href="https://checkout.ticto.app/OE3A20CD4" class="btn-cta-big" target="_blank" style="display:block; text-align:center;">
+        Garantir minha vaga de Fundador
+        <span>Pagamento seguro · 7 dias de garantia</span>
+      </a>
+      <p style="text-align:center; font-size:12px; color:#444; margin-top:16px;">🔒 Pagamento processado com segurança pela Ticto</p>
+    </div>
+  </div>
+
+  <footer>
+    <a href="#" class="logo" style="font-size:13px;" onclick="goHome(event)">
+      <div class="logo-icon" style="width:26px;height:26px;border-radius:8px;">
+        <svg width="13" height="13" viewBox="0 0 100 100" fill="none">
+          <path d="M50 8 L61 38 L93 38 L67 58 L76 90 L50 70 L24 90 L33 58 L7 38 L39 38 Z"
+            stroke="#000" stroke-width="8" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      RunStar AI
+    </a>
+    <p>© 2026 RunStar AI — Todos os direitos reservados.</p>
+  </footer>
+</div>
+
 
 </body>
 </html>
