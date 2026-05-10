@@ -719,6 +719,186 @@
     }
     .vendas-inclui li:last-child { border: none; }
 
+    
+    /* ══════════════════════════════════════
+       VSL PAGE
+    ══════════════════════════════════════ */
+    .vsl-pg-hero {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 24px 50px;
+      text-align: center;
+    }
+    .vsl-pg-hero h1 {
+      font-size: clamp(32px, 5vw, 54px);
+      font-weight: 900;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .vsl-pg-hero h1 em { color: #D6FF00; font-style: normal; }
+    .vsl-pg-hero p { font-size: 18px; color: #888; line-height: 1.7; }
+
+    .vsl-pg-bloco {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 24px;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    .vsl-pg-tag {
+      display: inline-block;
+      padding: 5px 14px;
+      border-radius: 100px;
+      border: 1px solid #333;
+      font-size: 11px;
+      font-weight: 600;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+    }
+    .vsl-pg-tag-green { border-color: rgba(214,255,0,0.3); color: #D6FF00; }
+
+    .vsl-pg-bloco h2 {
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+    .vsl-pg-bloco h2 em { color: #D6FF00; font-style: normal; }
+
+    .vsl-pg-bloco p {
+      font-size: 17px;
+      color: #888;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .vsl-pg-quote {
+      background: #0a0a0a;
+      border-left: 3px solid #D6FF00;
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      font-size: 15px;
+      color: #666;
+      font-style: italic;
+      line-height: 1.7;
+      margin: 28px 0;
+    }
+
+    .vsl-pg-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 36px;
+    }
+    @media (max-width: 640px) { .vsl-pg-cards { grid-template-columns: 1fr; } }
+
+    .vsl-pg-card {
+      background: #0a0a0a;
+      border: 1px solid #1a1a1a;
+      border-radius: 16px;
+      padding: 24px 20px;
+    }
+    .vsl-pg-card-icon { font-size: 28px; margin-bottom: 12px; }
+    .vsl-pg-card h3 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .vsl-pg-card p { font-size: 13px; color: #666; line-height: 1.6; margin: 0; }
+
+    .vsl-pg-ciencia-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 36px;
+    }
+
+    .vsl-pg-ciencia-item {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      padding: 28px 0;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    .vsl-pg-ciencia-item:last-child { border: none; }
+
+    .vsl-pg-ciencia-num {
+      font-size: 36px;
+      font-weight: 900;
+      color: #D6FF00;
+      opacity: 0.4;
+      min-width: 48px;
+      line-height: 1;
+      padding-top: 4px;
+    }
+
+    .vsl-pg-ciencia-item h3 { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+    .vsl-pg-ciencia-item p { font-size: 15px; color: #777; line-height: 1.75; margin: 0; }
+
+    .vsl-pg-beneficios {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 36px 0;
+    }
+
+    .vsl-pg-beneficio {
+      display: flex;
+      gap: 20px;
+      padding: 24px 0;
+      border-bottom: 1px solid #1a1a1a;
+      align-items: flex-start;
+    }
+    .vsl-pg-beneficio:last-child { border: none; }
+
+    .vsl-pg-check {
+      font-size: 18px;
+      color: #D6FF00;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .vsl-pg-beneficio strong { display: block; font-size: 16px; color: #fff; margin-bottom: 6px; }
+    .vsl-pg-beneficio p { font-size: 14px; color: #666; line-height: 1.65; margin: 0; }
+
+    .vsl-pg-aviso {
+      background: rgba(214,255,0,0.05);
+      border: 1px solid rgba(214,255,0,0.15);
+      border-radius: 12px;
+      padding: 18px 20px;
+      font-size: 14px;
+      color: #888;
+      line-height: 1.6;
+    }
+
+    .vsl-pg-oferta {
+      padding: 60px 24px 80px;
+      display: flex;
+      justify-content: center;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    .vsl-pg-oferta-box {
+      max-width: 520px;
+      width: 100%;
+      background: #0a0a0a;
+      border: 1.5px solid rgba(214,255,0,0.25);
+      border-radius: 24px;
+      padding: 44px 40px;
+    }
+    @media (max-width: 480px) { .vsl-pg-oferta-box { padding: 32px 24px; } }
+
+    .vsl-pg-oferta-box h2 {
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0;
+      letter-spacing: -0.5px;
+    }
+
     </style>
 </head>
 <body>
@@ -1107,7 +1287,7 @@
 
 
 <!-- ══════════════════════════════════════
-     PÁGINA 3 — VENDAS
+     PÁGINA 3 — VSL + VENDAS
 ══════════════════════════════════════ -->
 <div id="page-vendas" class="page">
   <nav>
@@ -1122,81 +1302,163 @@
     </a>
   </nav>
 
-  <div class="vendas-hero">
-    <div class="unlock-badge">⭐ Plano Fundador — Vagas Limitadas</div>
-    <h2>Tudo que o <em>RunStar AI</em> vai fazer por você</h2>
-    <p class="thanks-sub">Você já testou grátis. Agora conheça o plano completo — e garante seu acesso com o menor preço que existirá.</p>
+  <!-- 1. HEADLINE -->
+  <div class="vsl-pg-hero">
+    <div class="unlock-badge">⭐ Você desbloqueou o acesso completo</div>
+    <h1>Seu treino de corrida deveria ser <em>único como você.</em></h1>
+    <p>Continue lendo e descubra como o RunStar AI usa inteligência artificial e ciência do esporte para montar o treino perfeito — baseado no SEU condicionamento, no SEU histórico e nas SUAS metas.</p>
   </div>
 
-  <!-- FUNCIONALIDADES -->
-  <div class="vendas-funcionalidades">
-    <div class="vendas-func">
-      <div class="vendas-func-icon">📋</div>
-      <div>
-        <h3>Planilha semanal personalizada por IA</h3>
-        <p>Gerada toda semana com base no seu histórico, seu ritmo e seus objetivos. Nunca igual à semana anterior.</p>
-      </div>
+  <!-- 2. PROBLEMA -->
+  <div class="vsl-pg-bloco vsl-pg-problema">
+    <div class="vsl-pg-tag">O problema que ninguém fala</div>
+    <h2>Planilha genérica não é treino.<br/>É só uma lista de tarefas.</h2>
+    <p>Você já tentou seguir uma planilha da internet. Talvez até tenha funcionado por algumas semanas. Mas em algum momento a vida aconteceu — um dia ruim, uma viagem, um cansaço — e a planilha não soube lidar com isso.</p>
+    <p>Porque ela foi feita pra uma pessoa fictícia. Não pra você.</p>
+    <div class="vsl-pg-quote">
+      "80% dos corredores amadores abandonam a planilha nas primeiras 4 semanas — não por falta de vontade, mas porque ela não se adapta à realidade deles."
     </div>
-    <div class="vendas-func">
-      <div class="vendas-func-icon">🧠</div>
-      <div>
-        <h3>IA que aprende com você</h3>
-        <p>Quanto mais você treina, mais preciso fica. O algoritmo ajusta intensidade, volume e recuperação automaticamente.</p>
+    <p>O problema não é você. É a ferramenta.</p>
+  </div>
+
+  <!-- 3. SOLUÇÃO -->
+  <div class="vsl-pg-bloco vsl-pg-solucao">
+    <div class="vsl-pg-tag vsl-pg-tag-green">A solução</div>
+    <h2>Um treinador de corrida com IA que aprende com você — toda semana.</h2>
+    <p>O RunStar AI analisa seu condicionamento atual, seu histórico de treinos e suas metas para criar uma planilha que é 100% sua. Toda semana ela é atualizada com base no que você fez, no que você conseguiu e no que você precisa melhorar.</p>
+    <p>Não é uma planilha. É um treinador que nunca para de aprender sobre você.</p>
+
+    <div class="vsl-pg-cards">
+      <div class="vsl-pg-card">
+        <div class="vsl-pg-card-icon">🎯</div>
+        <h3>Baseado no seu condicionamento atual</h3>
+        <p>Começa de onde você está — não de onde a planilha acha que você deveria estar.</p>
       </div>
-    </div>
-    <div class="vendas-func">
-      <div class="vendas-func-icon">🔬</div>
-      <div>
-        <h3>Ciência aplicada ao seu treino</h3>
-        <p>Sobrecarga progressiva, periodização inteligente e treino polarizado — tudo baseado em evidências científicas.</p>
+      <div class="vsl-pg-card">
+        <div class="vsl-pg-card-icon">🔄</div>
+        <h3>Adapta toda semana</h3>
+        <p>Viajou? Cansou? Evoluiu mais rápido que o esperado? O treino se ajusta automaticamente.</p>
       </div>
-    </div>
-    <div class="vendas-func">
-      <div class="vendas-func-icon">🏅</div>
-      <div>
-        <h3>Metas reais e alcançáveis</h3>
-        <p>Do primeiro 5km até o sub-30 — o app traça o caminho mais curto até sua meta e acompanha cada passo.</p>
-      </div>
-    </div>
-    <div class="vendas-func">
-      <div class="vendas-func-icon">📱</div>
-      <div>
-        <h3>App completo em breve</h3>
-        <p>Dashboard, histórico, gráficos de evolução, integração com Garmin e Strava. Fundadores têm acesso primeiro.</p>
-      </div>
-    </div>
-    <div class="vendas-func">
-      <div class="vendas-func-icon">👥</div>
-      <div>
-        <h3>Grupo VIP de fundadores</h3>
-        <p>Acesso a um grupo exclusivo onde você influencia diretamente o desenvolvimento do app e tem suporte prioritário.</p>
+      <div class="vsl-pg-card">
+        <div class="vsl-pg-card-icon">📈</div>
+        <h3>Evolui com você</h3>
+        <p>Quanto mais você treina, mais preciso fica. O algoritmo aprende seus padrões e otimiza semana a semana.</p>
       </div>
     </div>
   </div>
 
-  <!-- PLANO FUNDADOR -->
-  <div class="vendas-plano">
-    <div class="vendas-plano-box">
-      <div class="vendas-plano-badge">🔓 Plano Fundador</div>
-      <h2>Preço especial para quem acredita desde o início</h2>
-      <div class="vendas-preco">
-        <div class="vendas-preco-de">De R$478,80/ano</div>
+  <!-- 4. CIÊNCIA -->
+  <div class="vsl-pg-bloco vsl-pg-ciencia">
+    <div class="vsl-pg-tag">Por que funciona</div>
+    <h2>Todos os treinos são baseados em <em>estudos científicos.</em></h2>
+    <p>Não é achismo. Não é feeling. Cada decisão do RunStar AI é fundamentada no que a ciência do esporte comprova sobre performance e evolução.</p>
+
+    <div class="vsl-pg-ciencia-items">
+      <div class="vsl-pg-ciencia-item">
+        <div class="vsl-pg-ciencia-num">01</div>
+        <div>
+          <h3>Sobrecarga Progressiva</h3>
+          <p>O volume e a intensidade aumentam de forma calculada semana a semana — exatamente no ritmo que seu corpo consegue absorver. Nem rápido demais (lesão), nem devagar demais (estagnação).</p>
+        </div>
+      </div>
+      <div class="vsl-pg-ciencia-item">
+        <div class="vsl-pg-ciencia-num">02</div>
+        <div>
+          <h3>Treino Polarizado de Intensidade</h3>
+          <p>80% dos treinos em volume leve + 20% em alta intensidade. É o método mais validado pela ciência para corredores de todos os níveis — do iniciante ao atleta de elite.</p>
+        </div>
+      </div>
+      <div class="vsl-pg-ciencia-item">
+        <div class="vsl-pg-ciencia-num">03</div>
+        <div>
+          <h3>Periodização Inteligente</h3>
+          <p>Ciclos estratégicos de carga e recuperação. Seu corpo precisa de descanso para evoluir — e o RunStar AI sabe exatamente quando empurrar e quando recuperar.</p>
+        </div>
+      </div>
+      <div class="vsl-pg-ciencia-item">
+        <div class="vsl-pg-ciencia-num">04</div>
+        <div>
+          <h3>IA Adaptativa em tempo real</h3>
+          <p>Os dados do seu treino alimentam o algoritmo toda semana. Quanto mais informação, mais precisa fica a personalização — um ciclo de melhoria contínua.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. FUNDADORES -->
+  <div class="vsl-pg-bloco vsl-pg-fundadores">
+    <div class="vsl-pg-tag vsl-pg-tag-green">Por que agora</div>
+    <h2>O Plano Fundador existe por uma razão simples.</h2>
+    <p>O RunStar AI está em fase de pré-lançamento. O app ainda está sendo desenvolvido — mas a tecnologia já existe, já funciona, e já está entregando resultados reais pra quem está testando.</p>
+    <p>Os primeiros a entrar são os mais importantes. São eles que validam o produto, dão feedback, ajudam a moldar o app. Em troca, recebem o benefício que ninguém mais vai ter:</p>
+
+    <div class="vsl-pg-beneficios">
+      <div class="vsl-pg-beneficio">
+        <span class="vsl-pg-check">✓</span>
+        <div>
+          <strong>Preço bloqueado para sempre</strong>
+          <p>O valor que você paga hoje nunca vai aumentar pra você — mesmo quando o app for lançado para o público geral com preço cheio.</p>
+        </div>
+      </div>
+      <div class="vsl-pg-beneficio">
+        <span class="vsl-pg-check">✓</span>
+        <div>
+          <strong>Planilha semanal personalizada por IA agora</strong>
+          <p>Enquanto o app é finalizado, você já recebe toda semana sua planilha personalizada diretamente no WhatsApp.</p>
+        </div>
+      </div>
+      <div class="vsl-pg-beneficio">
+        <span class="vsl-pg-check">✓</span>
+        <div>
+          <strong>Acesso antecipado ao app</strong>
+          <p>Quando o app lançar, fundadores entram primeiro — antes de todo mundo.</p>
+        </div>
+      </div>
+      <div class="vsl-pg-beneficio">
+        <span class="vsl-pg-check">✓</span>
+        <div>
+          <strong>Grupo VIP exclusivo</strong>
+          <p>Acesso a um grupo fechado onde você influencia diretamente o que vai ser construído e tem suporte prioritário.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="vsl-pg-aviso">
+      ⚠️ As vagas de fundador são limitadas e não serão reabertas com esse preço. Quando encherem, o próximo plano será no valor cheio.
+    </div>
+  </div>
+
+  <!-- 6. OFERTA + CTA -->
+  <div class="vsl-pg-oferta">
+    <div class="vsl-pg-oferta-box">
+      <div class="vsl-pg-tag vsl-pg-tag-green" style="margin-bottom:24px;">🔓 Plano Fundador RunStar AI</div>
+      <h2>Tudo isso por menos de R$20 por mês.</h2>
+
+      <div class="vendas-preco" style="margin: 28px 0;">
+        <div class="vendas-preco-de">De R$478,80/ano (preço cheio)</div>
         <div class="vendas-preco-por">R$238,80<span>/ano</span></div>
-        <div class="vendas-preco-mes">equivale a R$19,90/mês</div>
+        <div class="vendas-preco-mes">equivale a R$19,90/mês · cobrado anualmente</div>
       </div>
-      <ul class="vendas-inclui">
-        <li>✓ Planilha semanal personalizada por IA</li>
-        <li>✓ Acesso antecipado ao app</li>
+
+      <ul class="vendas-inclui" style="margin-bottom:32px;">
+        <li>✓ Planilha semanal personalizada por IA no WhatsApp</li>
+        <li>✓ Treinos baseados em estudos científicos</li>
+        <li>✓ Adaptação automática toda semana</li>
+        <li>✓ Acesso antecipado ao app completo</li>
         <li>✓ Grupo VIP de fundadores</li>
         <li>✓ Preço bloqueado para sempre</li>
-        <li>✓ Influência no desenvolvimento do app</li>
-        <li>✓ Suporte prioritário</li>
+        <li>✓ 7 dias de garantia — sem perguntas</li>
       </ul>
+
       <a href="https://checkout.ticto.app/OE3A20CD4" class="btn-cta-big" target="_blank" style="display:block; text-align:center;">
-        Garantir minha vaga de Fundador
-        <span>Pagamento seguro · 7 dias de garantia</span>
+        Quero ser Fundador do RunStar AI
+        <span>Garantia de 7 dias · Pagamento seguro</span>
       </a>
-      <p style="text-align:center; font-size:12px; color:#444; margin-top:16px;">🔒 Pagamento processado com segurança pela Ticto</p>
+
+      <p style="text-align:center; font-size:13px; color:#444; margin-top:20px; line-height:1.6;">
+        🔒 Pagamento processado com segurança pela Ticto<br/>
+        Se em 7 dias você não ficar satisfeito, devolvemos 100% do valor.
+      </p>
     </div>
   </div>
 
