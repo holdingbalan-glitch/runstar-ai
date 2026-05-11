@@ -1124,6 +1124,287 @@
       margin-top: 16px;
     }
 
+    
+    /* ══════════════════════════════════════
+       THANK YOU PAGE COMPLETA
+    ══════════════════════════════════════ */
+    .ty-page { background: #000; }
+
+    .ty-confirmacao {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 60px 24px 50px;
+      text-align: center;
+    }
+    .ty-check { font-size: 48px; margin-bottom: 20px; }
+    .ty-confirmacao h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 18px;
+    }
+    .ty-confirmacao h2 em { color: #D6FF00; font-style: normal; }
+    .ty-confirmacao p { font-size: 16px; color: #777; line-height: 1.75; margin-bottom: 14px; }
+    .ty-destaque-txt {
+      font-size: 15px !important;
+      color: #D6FF00 !important;
+      font-weight: 600 !important;
+      background: rgba(214,255,0,0.05);
+      border: 1px solid rgba(214,255,0,0.15);
+      border-radius: 12px;
+      padding: 14px 20px;
+      margin-top: 10px !important;
+    }
+
+    .ty-bloco {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 24px;
+      border-top: 1px solid #111;
+    }
+    .ty-bloco-dark {
+      background: #050505;
+      max-width: 100%;
+      padding: 60px 0;
+    }
+    .ty-bloco-dark > * {
+      max-width: 780px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .ty-bloco-tag {
+      display: inline-block;
+      padding: 5px 14px;
+      border-radius: 100px;
+      border: 1px solid #222;
+      font-size: 11px;
+      font-weight: 600;
+      color: #444;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      margin-bottom: 22px;
+    }
+    .ty-tag-green { border-color: rgba(214,255,0,0.25); color: #D6FF00; }
+
+    .ty-bloco h3 {
+      font-size: clamp(24px, 3.5vw, 36px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .ty-bloco h3 em { color: #D6FF00; font-style: normal; }
+    .ty-bloco p { font-size: 16px; color: #777; line-height: 1.85; margin-bottom: 18px; }
+
+    /* Cards */
+    .ty-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 36px;
+    }
+    @media (max-width: 640px) { .ty-cards { grid-template-columns: 1fr; } }
+
+    .ty-card {
+      background: #0a0a0a;
+      border: 1px solid #1a1a1a;
+      border-radius: 18px;
+      padding: 26px 20px;
+      transition: border-color 0.2s;
+    }
+    .ty-card:hover { border-color: rgba(214,255,0,0.2); }
+    .ty-card-icon { font-size: 28px; margin-bottom: 12px; }
+    .ty-card h4 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+    .ty-card p { font-size: 13px; color: #666; line-height: 1.65; margin: 0; }
+
+    /* Ciência */
+    .ty-ciencia { margin-top: 36px; }
+    .ty-ciencia-item {
+      display: flex;
+      gap: 24px;
+      padding: 30px 0;
+      border-bottom: 1px solid #111;
+    }
+    .ty-ciencia-item:last-child { border: none; }
+    .ty-ciencia-num {
+      font-size: 40px;
+      font-weight: 900;
+      color: #D6FF00;
+      opacity: 0.25;
+      min-width: 48px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .ty-ciencia-item h4 { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+    .ty-ciencia-item p { font-size: 15px; color: #666; line-height: 1.8; margin: 0; }
+
+    /* Fundador */
+    .ty-fundador-box {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .ty-fundador-item {
+      display: flex;
+      gap: 20px;
+      padding: 26px 0;
+      border-bottom: 1px solid #111;
+      align-items: flex-start;
+    }
+    .ty-fundador-item:last-child { border: none; }
+    .ty-fundador-icon { font-size: 28px; flex-shrink: 0; }
+    .ty-fundador-item h4 { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .ty-fundador-item p { font-size: 14px; color: #666; line-height: 1.7; margin: 0; }
+
+    .ty-aviso {
+      background: rgba(214,255,0,0.04);
+      border: 1px solid rgba(214,255,0,0.12);
+      border-radius: 12px;
+      padding: 18px 22px;
+      font-size: 14px;
+      color: #777;
+      line-height: 1.65;
+      margin-top: 32px;
+    }
+
+    /* Oferta */
+    .ty-oferta {
+      padding: 60px 24px 80px;
+      border-top: 1px solid #111;
+    }
+    .ty-oferta-inner {
+      max-width: 580px;
+      margin: 0 auto;
+      background: #080808;
+      border: 1.5px solid rgba(214,255,0,0.2);
+      border-radius: 28px;
+      padding: 48px 40px;
+    }
+    @media (max-width: 480px) { .ty-oferta-inner { padding: 32px 22px; } }
+
+    .ty-oferta-tag {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 100px;
+      background: rgba(214,255,0,0.07);
+      border: 1px solid rgba(214,255,0,0.2);
+      font-size: 12px;
+      font-weight: 700;
+      color: #D6FF00;
+      margin-bottom: 22px;
+    }
+    .ty-oferta-inner h3 {
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    /* Comparativo */
+    .ty-comparativo {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 28px 0;
+    }
+    @media (max-width: 480px) { .ty-comparativo { grid-template-columns: 1fr; } }
+
+    .ty-comp-item {
+      border-radius: 16px;
+      padding: 20px 16px;
+      text-align: center;
+    }
+    .ty-comp-out { background: #0d0d0d; border: 1px solid #1a1a1a; }
+    .ty-comp-in {
+      background: rgba(214,255,0,0.06);
+      border: 1.5px solid rgba(214,255,0,0.3);
+    }
+    .ty-comp-label { font-size: 11px; color: #555; margin-bottom: 8px; }
+    .ty-comp-out .ty-comp-label { text-decoration: line-through; }
+    .ty-comp-preco { font-size: 24px; font-weight: 800; color: #333; line-height: 1; }
+    .ty-comp-preco span { font-size: 13px; font-weight: 400; }
+    .ty-comp-in .ty-comp-preco { color: #D6FF00; font-size: 28px; }
+    .ty-comp-sub { font-size: 10px; color: #444; margin-top: 6px; }
+    .ty-comp-in .ty-comp-sub { color: #888; }
+
+    /* Preço final */
+    .ty-preco-box {
+      background: #0d0d0d;
+      border-radius: 16px;
+      padding: 24px;
+      margin: 28px 0;
+      text-align: center;
+    }
+    .ty-preco-de { font-size: 13px; color: #333; text-decoration: line-through; margin-bottom: 6px; }
+    .ty-preco-por { font-size: 54px; font-weight: 900; color: #D6FF00; line-height: 1; }
+    .ty-preco-por span { font-size: 20px; font-weight: 400; color: #555; }
+    .ty-preco-mes { font-size: 13px; color: #555; margin-top: 6px; }
+    .ty-preco-parcela { font-size: 15px; color: #888; margin-top: 10px; }
+    .ty-preco-parcela strong { color: #D6FF00; }
+
+    /* Botão CTA */
+    .ty-btn-cta {
+      display: block;
+      width: 100%;
+      padding: 20px 28px;
+      background: #D6FF00;
+      color: #000;
+      border: none;
+      border-radius: 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      box-shadow: 0 0 50px rgba(214,255,0,0.25);
+      transition: transform 0.15s, box-shadow 0.2s;
+      margin-bottom: 16px;
+    }
+    .ty-btn-cta span {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(0,0,0,0.55);
+      margin-top: 4px;
+    }
+    .ty-btn-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 70px rgba(214,255,0,0.4);
+    }
+
+    .ty-garantia {
+      text-align: center;
+      font-size: 12px;
+      color: #333;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .ty-pills-final {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+    .ty-pill-f {
+      padding: 7px 14px;
+      background: #0d0d0d;
+      border: 1px solid #1a1a1a;
+      border-radius: 100px;
+      font-size: 12px;
+      color: #666;
+    }
+
     </style>
 </head>
 <body>
@@ -1298,7 +1579,7 @@
       <div class="vsl-cta-badge">🔓 Vagas de Fundador abertas</div>
       <h2>Não é app de planilha.<br/><em>É ciência personalizada pra você.</em></h2>
       <p>Garanta agora sua vaga com o menor preço que o RunStar AI vai ter — para sempre.</p>
-      <a href="https://checkout.ticto.app/OE3A20CD4" class="btn-cta-big" target="_blank">
+      <a href="https://checkout.ticto.app/O941AB275" class="btn-cta-big" target="_blank">
         Garantir minha vaga de Fundador
         <span>Preço especial · Vagas limitadas</span>
       </a>
@@ -1350,54 +1631,179 @@
     </a>
   </nav>
 
-  <section class="thanks-hero" style="position:relative;">
-    <div class="unlock-badge">
-      🔓 Vaga desbloqueada para você
+  <!-- THANK YOU PAGE COMPLETA -->
+  <div class="ty-page">
+
+    <!-- CONFIRMAÇÃO -->
+    <div class="ty-confirmacao">
+      <div class="ty-check">✅</div>
+      <h2>WhatsApp recebido!<br/><em>Sua planilha está sendo preparada.</em></h2>
+      <p>Em até 24h você recebe no WhatsApp sua primeira planilha de treino personalizada por IA — gratuita, sem compromisso.</p>
+      <p class="ty-destaque-txt">Mas antes de fechar essa página, leia com atenção o que está abaixo. Pode ser a decisão mais importante da sua vida como corredor.</p>
     </div>
 
-    <h2>Você ganhou acesso <em>antecipado</em></h2>
+    <!-- O QUE É O APP -->
+    <div class="ty-bloco">
+      <div class="ty-bloco-tag">O RunStar AI</div>
+      <h3>O primeiro app de corrida que realmente treina <em>você</em> — não uma média de todo mundo.</h3>
+      <p>A maioria dos apps de corrida te dá uma planilha pronta. Você segue por algumas semanas, a vida atrapalha, e aí abandona. Não porque você é fraco. Mas porque a planilha foi feita para uma pessoa fictícia — não para você.</p>
+      <p>O RunStar AI funciona diferente. Ele analisa seu condicionamento atual, sua rotina, seu histórico e suas metas para criar um plano 100% personalizado. E toda semana ele é atualizado com base no que você realmente fez.</p>
+      <p>Viajou? Cansou? Evoluiu mais rápido que o esperado? O treino se adapta. Sempre.</p>
 
-    <p class="thanks-sub">
-      Uma vaga de fundador foi reservada no seu nome. Mas ela só fica disponível pelos próximos 15 minutos — depois some.
-    </p>
-
-    <div class="countdown-wrap">
-      <p class="countdown-label">Sua vaga expira em</p>
-      <div class="countdown-digits">
-        <div class="digit-block">
-          <div class="digit-num" id="cd-min">14</div>
-          <div class="digit-label">min</div>
+      <div class="ty-cards">
+        <div class="ty-card">
+          <div class="ty-card-icon">🎯</div>
+          <h4>Começa do seu ponto atual</h4>
+          <p>Não importa se você está voltando depois de anos parado ou se já corre há meses. O app analisa onde você está hoje e monta o plano certo para o seu nível.</p>
         </div>
-        <div class="colon">:</div>
-        <div class="digit-block">
-          <div class="digit-num" id="cd-sec">59</div>
-          <div class="digit-label">seg</div>
+        <div class="ty-card">
+          <div class="ty-card-icon">🔄</div>
+          <h4>Adapta toda semana</h4>
+          <p>Semana que vem não é igual à semana passada. O app revisa seu plano toda segunda com base no que você fez, no que você não fez, e no que você precisa.</p>
+        </div>
+        <div class="ty-card">
+          <div class="ty-card-icon">📱</div>
+          <h4>Na palma da mão, 24h</h4>
+          <p>Dashboard, treino do dia, histórico, gráficos de evolução e integração com Garmin e Strava. Tudo num app clean e fácil de usar.</p>
         </div>
       </div>
     </div>
 
-    <p class="expired-msg" id="expired-msg">⏰ Sua vaga expirou. Mas você ainda pode entrar!</p>
+    <!-- CIÊNCIA -->
+    <div class="ty-bloco ty-bloco-dark">
+      <div class="ty-bloco-tag ty-tag-green">Ciência aplicada</div>
+      <h3>Cada treino baseado em <em>estudos científicos comprovados.</em></h3>
+      <p>Não é chute. Não é achismo. Cada decisão do RunStar AI é fundamentada no que a ciência do esporte prova sobre evolução, performance e prevenção de lesões.</p>
 
-    <a
-      href="#"
-      id="cta-btn"
-      class="btn-cta-big"
-      onclick="showVendas(); return false;"
-    >
-      Ver o plano completo do RunStar AI
-      <span>Acesso antecipado com preço de fundador</span>
-    </a>
-
-    <p class="cta-note">🔒 Pagamento seguro · Satisfação garantida</p>
-
-    <div class="benefits">
-      <div class="benefit-pill">Acesso vitalício ao preço fundador</div>
-      <div class="benefit-pill">Plano personalizado por IA</div>
-      <div class="benefit-pill">Grupo VIP de fundadores</div>
-      <div class="benefit-pill">Influência no desenvolvimento do app</div>
-      <div class="benefit-pill">Suporte prioritário</div>
+      <div class="ty-ciencia">
+        <div class="ty-ciencia-item">
+          <div class="ty-ciencia-num">01</div>
+          <div>
+            <h4>Sobrecarga Progressiva</h4>
+            <p>O método mais validado da ciência do esporte. Volume e intensidade aumentam de forma calculada semana a semana — exatamente no ritmo que seu corpo consegue absorver. Nem rápido (lesão), nem devagar (estagnação). O algoritmo calcula o ponto exato.</p>
+          </div>
+        </div>
+        <div class="ty-ciencia-item">
+          <div class="ty-ciencia-num">02</div>
+          <div>
+            <h4>Treino Polarizado de Intensidade</h4>
+            <p>80% volume leve + 20% alta intensidade. É o método mais estudado e recomendado pela ciência para corredores de todos os níveis. Mais performance. Menos risco de lesão. Resultados que aparecem e ficam.</p>
+          </div>
+        </div>
+        <div class="ty-ciencia-item">
+          <div class="ty-ciencia-num">03</div>
+          <div>
+            <h4>Periodização Inteligente</h4>
+            <p>Ciclos estratégicos de carga e recuperação calculados com base no seu histórico real — não em médias de outras pessoas. Seu corpo precisa de descanso para evoluir, e o RunStar AI sabe exatamente quando empurrar e quando recuperar.</p>
+          </div>
+        </div>
+        <div class="ty-ciencia-item">
+          <div class="ty-ciencia-num">04</div>
+          <div>
+            <h4>IA Adaptativa com Aprendizado Contínuo</h4>
+            <p>Quanto mais você treina, mais preciso fica o algoritmo. Ele aprende seus padrões, seus pontos fortes e seus limites — criando um ciclo de melhoria contínua que nenhuma planilha estática consegue oferecer.</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+
+    <!-- PLANO FUNDADOR -->
+    <div class="ty-bloco">
+      <div class="ty-bloco-tag ty-tag-green">Oportunidade única</div>
+      <h3>O Plano Fundador: <em>a decisão que você não vai querer ter deixado passar.</em></h3>
+      <p>O RunStar AI está em fase de pré-lançamento. O app está sendo desenvolvido — mas a tecnologia já funciona, e os primeiros usuários já estão recebendo resultados reais.</p>
+      <p>Para viabilizar o desenvolvimento, estamos abrindo um número limitado de vagas para fundadores. Quem entrar agora garante algo que nunca mais existirá:</p>
+
+      <div class="ty-fundador-box">
+        <div class="ty-fundador-item">
+          <span class="ty-fundador-icon">♾️</span>
+          <div>
+            <h4>Assinatura perpétua pelo preço de hoje</h4>
+            <p>Quem assinar agora paga R$19,90/mês para sempre — mesmo quando o app for lançado ao público com preço cheio. Você nunca vai receber uma notificação de reajuste. Nunca.</p>
+          </div>
+        </div>
+        <div class="ty-fundador-item">
+          <span class="ty-fundador-icon">📲</span>
+          <div>
+            <h4>Planilha semanal no WhatsApp agora</h4>
+            <p>Você não precisa esperar o app lançar. Toda semana você já recebe sua planilha personalizada por IA diretamente no WhatsApp. O benefício começa imediatamente.</p>
+          </div>
+        </div>
+        <div class="ty-fundador-item">
+          <span class="ty-fundador-icon">🚀</span>
+          <div>
+            <h4>Primeiro acesso ao app</h4>
+            <p>Quando o app lançar, fundadores entram antes de qualquer pessoa. Com toda a tecnologia funcionando, integração com Garmin e Strava, dashboard completo e coach IA 24h.</p>
+          </div>
+        </div>
+        <div class="ty-fundador-item">
+          <span class="ty-fundador-icon">👥</span>
+          <div>
+            <h4>Grupo VIP de fundadores</h4>
+            <p>Acesso exclusivo a um grupo fechado onde você influencia diretamente o desenvolvimento do app, tem suporte prioritário e conecta com outros corredores sérios.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ty-aviso">
+        ⚠️ <strong>Atenção:</strong> As vagas de fundador são limitadas e não serão reabertas nesse preço. Quando encherem, o próximo plano disponível será no valor cheio — sem exceções.
+      </div>
+    </div>
+
+    <!-- ANCORAGEM DE PREÇO + CTA -->
+    <div class="ty-oferta">
+      <div class="ty-oferta-inner">
+        <div class="ty-oferta-tag">🔓 Plano Fundador — Vagas Limitadas</div>
+
+        <h3>Quanto vale ter um treinador de corrida pessoal?</h3>
+        <p style="color:#777; font-size:16px; line-height:1.75; margin-bottom:28px;">Um treinador de corrida presencial custa em média <strong style="color:#fff;">R$300 a R$600 por mês</strong>. Uma assessoria esportiva online sai entre <strong style="color:#fff;">R$150 e R$250 por mês</strong>. O RunStar AI entrega o mesmo nível de personalização — com ciência e IA — por uma fração desse valor.</p>
+
+        <div class="ty-comparativo">
+          <div class="ty-comp-item ty-comp-out">
+            <div class="ty-comp-label">Treinador presencial</div>
+            <div class="ty-comp-preco">R$450<span>/mês</span></div>
+            <div class="ty-comp-sub">média de mercado</div>
+          </div>
+          <div class="ty-comp-item ty-comp-out">
+            <div class="ty-comp-label">Assessoria online</div>
+            <div class="ty-comp-preco">R$200<span>/mês</span></div>
+            <div class="ty-comp-sub">média de mercado</div>
+          </div>
+          <div class="ty-comp-item ty-comp-in">
+            <div class="ty-comp-label">RunStar AI Fundador</div>
+            <div class="ty-comp-preco">R$19,90<span>/mês</span></div>
+            <div class="ty-comp-sub">para sempre · nunca reajusta</div>
+          </div>
+        </div>
+
+        <!-- PREÇO FINAL -->
+        <div class="ty-preco-box">
+          <div class="ty-preco-de">Preço público após lançamento: R$478,80/ano</div>
+          <div class="ty-preco-por">R$238,80<span>/ano</span></div>
+          <div class="ty-preco-mes">R$19,90/mês · cobrado anualmente</div>
+          <div class="ty-preco-parcela">ou em até <strong>12x de R$22,07</strong> no cartão</div>
+        </div>
+
+        <a href="https://checkout.ticto.app/O941AB275" class="ty-btn-cta" target="_blank">
+          Quero ser Fundador do RunStar AI
+          <span>Garantia de 7 dias · Pagamento 100% seguro</span>
+        </a>
+
+        <p class="ty-garantia">🔒 Pagamento seguro pela Ticto · Se em 7 dias você não ficar satisfeito, devolvemos 100% — sem burocracia, sem perguntas.</p>
+
+        <div class="ty-pills-final">
+          <div class="ty-pill-f">✓ Planilha semanal por IA</div>
+          <div class="ty-pill-f">✓ Ciência comprovada</div>
+          <div class="ty-pill-f">✓ Preço perpétuo</div>
+          <div class="ty-pill-f">✓ App antecipado</div>
+          <div class="ty-pill-f">✓ Grupo VIP</div>
+          <div class="ty-pill-f">✓ 7 dias de garantia</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- FIM THANK YOU PAGE -->
 
   <footer>
     <a href="#" class="logo" style="font-size:13px;" onclick="goBack(event)">
@@ -1693,7 +2099,7 @@
         <li>✓ 7 dias de garantia — sem perguntas</li>
       </ul>
 
-      <a href="https://checkout.ticto.app/OE3A20CD4" class="btn-cta-big" target="_blank" style="display:block; text-align:center; margin-bottom:16px;">
+      <a href="https://checkout.ticto.app/O941AB275" class="btn-cta-big" target="_blank" style="display:block; text-align:center; margin-bottom:16px;">
         Quero ser Fundador do RunStar AI
         <span>Garantia de 7 dias · Pagamento 100% seguro</span>
       </a>
